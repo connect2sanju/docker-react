@@ -1,0 +1,11 @@
+language: generic 
+sudo: required
+services:
+    -docker
+
+before_install:
+    - docker build -t reactimage/docker-react -f Dockerfile.dev .
+
+script:
+    -docker 
+    - docker run -e CI=true eactimage/docker-react npm run test
