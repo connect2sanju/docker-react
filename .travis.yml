@@ -7,5 +7,4 @@ before_install:
     - docker build -t reactimage/docker-react -f Dockerfile.dev .
 
 script:
-    -docker 
-    - docker run reactimage/docker-react npm run test -- --coverage
+    - docker run -e CI=true reactimage/docker-react npm run test
